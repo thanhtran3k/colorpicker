@@ -1,0 +1,28 @@
+<p class="text-justify">1. Red</p>
+<p class="text-justify">2. Green</p>
+<p class="text-justify">3. Blue</p>
+<p class="text-justify">4. Random</p>
+<p class="font-italic">Note: Please input color's index or color name to the textbox.</p>
+
+<div *ngIf="invalidInput" style="color: red;">
+    Invalid input please input correct name or number.
+</div>
+
+<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Color name or number." aria-label="color-picker"
+        aria-describedby="basic-addon2" (keyup)="onKey($event)" (keyup.enter)='onButtonClick()' required />    
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" (click)='onButtonClick()'>Submit</button>
+    </div>
+</div>
+
+<div class="badge bg-primary text-wrap" style="padding: 10px;">Output</div>
+<div style="padding-top: 10px;">
+    <p class="text-justify">Red: {{colorOutput.redOutput}}</p>
+    <p class="text-justify">Green: {{colorOutput.greenOutput}}</p>
+    <p class="text-justify">Blue: {{colorOutput.blueOutput}}</p>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button class="btn btn-outline-danger" type="button" (click)='resetCount()'>Reset</button>
+        <button class="btn btn-outline-primary" type="button" (click)='randomPicker()'>{{count == 0 ? 'Random Picker' : 'Stop'}}</button>
+    </div>
+</div>
