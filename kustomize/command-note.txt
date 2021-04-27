@@ -1,0 +1,11 @@
+# For creating a deployment in kubernetes
+# Create a deployment in Kubernetes cluster
+kubectl apply -f kubernetes-deployment.yml
+
+# For internal communicating to angualar application
+# Create a ClusterIP service.
+kubeclt apply -f kubenetes-services.yml
+
+# For access the angular application outside kubernetes
+# Create a load balancer service to access it via some External IP, provided by the service.
+kubeclt apply -f kubernetes-lb-service.yml

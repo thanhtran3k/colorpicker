@@ -1,0 +1,8 @@
+#for creating a deployment in kubernetes    
+kubectl apply -f kubernetes-deployment.yaml
+
+#for internal communicating to angualar application
+kubeclt apply -f kubenetes-services.yaml
+
+#for access the angular application outside kubernetes
+kubeclt apply -f kubernetes-lb-service.yaml

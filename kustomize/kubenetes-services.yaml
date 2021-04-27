@@ -1,0 +1,18 @@
+# Normal service to access the application internally.
+# You can use this service in ingress to expose it to some domain.
+# There is no matchLabels in service
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: colorpicker
+  labels:
+    app: colorpicker
+spec:
+  type: ClusterIP
+  ports:
+  - name: colorpicker-http
+    port: 80
+    protocol: TCP
+  selector:
+    app: colorpicker

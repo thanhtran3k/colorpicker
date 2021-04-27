@@ -1,9 +1,10 @@
 version: "3.9"
 services:
-  myapp:
+  colorpicker:
     build:
       # context: ./my_dir
       context: .
       dockerfile: Dockerfile
-    ports: 
-      - 4200:80
+    image: thanhtran3k/colorpicker
+    ports:
+      - 4201:80

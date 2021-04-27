@@ -1,0 +1,29 @@
+# K8s deployment manifest
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: colorpicker
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: colorpicker
+  template:
+    metadata:
+      labels:
+        app: colorpicker
+    spec:
+      containers:
+        - name: colorpicker
+          image: thanhtran3k/colorpicker:latest
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 80
+          resources: 
+            limits:
+              cpu: 500m
+              memory: 500Mi
+            requests:
+              cpu: 500m
+              memory: 500Mi

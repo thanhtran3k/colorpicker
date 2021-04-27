@@ -1,0 +1,15 @@
+# Make sure Label selector is the same as the deployment label
+apiVersion: v1
+kind: Service
+metadata:
+  name: colorpicker-loadbalancer
+  labels:
+    app: color-picker
+spec:
+  type: LoadBalancer
+  ports:
+  - name: colorpicker-lb-http
+    port: 80
+    protocol: TCP
+  selector:
+    app: colorpicker
