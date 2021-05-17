@@ -2,7 +2,7 @@
 # Create a deployment in Kubernetes cluster
 kubectl apply -f kubernetes-deployment.yml
 
-# For internal communicating to angualar application
+# For internal communicating to angular application
 # Create a ClusterIP service.
 kubeclt apply -f kubenetes-services.yml
 
